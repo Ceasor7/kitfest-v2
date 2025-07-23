@@ -1,92 +1,84 @@
 "use client";
-
 import { motion } from "framer-motion";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaWhatsapp,
-  FaXTwitter,
-} from "react-icons/fa6";
-import { useEffect } from "react";
+import { ChevronUp } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-export default function Footer() {
+interface FooterProps {
+  className?: string;
+}
+
+const Footer = ({ className }: FooterProps) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <footer className="relative bg-[#110d0d] text-white pt-16 pb-10">
-      {/* Scroll to top button */}
-      <div className="absolute -top-7 left-1/2 mb-5 transform -translate-x-1/2">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={scrollToTop}
-          className="bg-orange-500 rounded-full p-4 shadow-lg"
-        >
-          <span className="text-2xl">↑</span>
-        </motion.button>
-      </div>
+    <footer
+      className={cn(
+        "relative bg-black w-full min-h-40 flex items-center justify-center p-8",
+        className
+      )}
+    >
+      {/* Bottom White Button */}
+      <motion.button
+        onClick={scrollToTop}
+        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-10 shadow-lg hover:shadow-xl transition-shadow z-0"
+        aria-label="Back to top"
+        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 17,
+          delay: 0.2,
+        }}
+      >
+        <ChevronUp className="w-6 h-6 text-black" strokeWidth={3} />
+      </motion.button>
 
-      <div className="container mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-6 text-sm">
-        {/* Quick Links */}
-        <div>
-          <h4 className="font-semibold mb-3">Quick Links</h4>
-          <ul className="space-y-2 text-gray-300">
-            <li>About KITFest</li>
-            <li>Kenya Theatre Awards</li>
-            <li>Theatre KE</li>
-            <li>KIFT</li>
-            <li>Kenya Cultural Centre</li>
-          </ul>
+      {/* Top Yellow Button */}
+      <motion.button
+        onClick={scrollToTop}
+        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#FF6F00] rounded-full p-4 shadow-lg hover:shadow-xl transition-shadow z-10"
+        aria-label="Back to top"
+        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        transition={{
+          type: "spring",
+          stiffness: 400,
+          damping: 17,
+          delay: 0.2,
+        }}
+      >
+        <ChevronUp className="w-6 h-6 text-black" strokeWidth={3} />
+      </motion.button>
+
+      {/* Footer Content */}
+      <motion.div
+        className="text-center text-white space-y-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.6 }}
+      >
+        <h3 className="text-lg font-semibold">Footer with Floating Button</h3>
+        <p className="text-gray-300 max-w-md">
+          This footer demonstrates a floating "Back to Top" button with smooth
+          scroll behavior and Framer Motion animations.
+        </p>
+        <div className="flex justify-center space-x-6 text-sm text-gray-400">
+          <span>© 2024 Your Company</span>
+          <span>•</span>
+          <span>Privacy</span>
+          <span>•</span>
+          <span>Terms</span>
         </div>
-
-        {/* Festival Overview */}
-        <div>
-          <h4 className="font-semibold mb-3">Festival Overview</h4>
-          <ul className="space-y-2 text-gray-300">
-            <li>Participation</li>
-            <li>Experiences</li>
-            <li>#KITFest2022 Honorary</li>
-            <li>KITFest Brand</li>
-          </ul>
-        </div>
-
-        {/* Logo */}
-        <div className="md:col-span-1 flex justify-center md:justify-start items-start">
-          <img
-            src="/images/KITFest-Full-White-Logo.png" // update path to your actual logo
-            alt="The Kenya International Theatre Festival"
-            className="h-28 object-contain"
-          />
-        </div>
-
-        {/* Subscribe */}
-        <div className="md:col-span-1">
-          <p className="text-orange-400 text-sm mb-2">Receive Festival News</p>
-          <div className="flex items-center space-x-2">
-            <input
-              type="email"
-              placeholder="Lorem@email.com"
-              className="bg-gray-800 px-4 py-2 text-white rounded-full w-full focus:outline-none text-sm"
-            />
-            <button className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm">
-              Sign Up
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Socials */}
-      <div className="mt-10 px-6 md:px-16 flex items-center space-x-6 text-lg text-white">
-        <p className="text-sm">Follow us</p>
-        <FaXTwitter />
-        <FaFacebookF />
-        <FaInstagram />
-        <FaYoutube />
-        <FaWhatsapp />
-      </div>
+      </motion.div>
     </footer>
   );
-}
+};
+
+export default Footer;

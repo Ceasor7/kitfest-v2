@@ -1,11 +1,11 @@
-import AboutUs from "@/components/Homepage/AboutUs";
+import IndexHome from "@/components/Homepage/IndexHome";
 import React from "react";
 
 export default function Home() {
   return (
     <div>
       <section>
-        <AboutUs />
+        <IndexHome />
       </section>
     </div>
   );
