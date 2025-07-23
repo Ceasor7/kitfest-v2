@@ -16,8 +16,8 @@ const DividerImage: FC<DividerImageProps> = ({
   priority = false,
 }) => {
   return (
-    <section
-      className="w-full h-80 relative overflow-hidden"
+    <div
+      className="w-full h-36 relative overflow-hidden"
       aria-label="Visual Divider"
     >
       <motion.div
@@ -25,11 +25,18 @@ const DividerImage: FC<DividerImageProps> = ({
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="w-full h-full"
+        className="w-full h-full m-0 p-0"
       >
-        <Image src={src} alt={alt} fill priority={priority} sizes="100vw" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority={priority}
+          sizes="100vw"
+          className="object-cover"
+        />
       </motion.div>
-    </section>
+    </div>
   );
 };
 

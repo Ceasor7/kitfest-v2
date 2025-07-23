@@ -58,7 +58,7 @@ const AboutKitfest = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              \ About Kitfest
+              About Kitfest
             </h2>
             <p className="text-lg text-gray-700">
               Kitfest is a vibrant celebration of arts, music, and culture,
@@ -67,7 +67,7 @@ const AboutKitfest = () => {
           </motion.div>
 
           {/* Embedded YouTube Video */}
-          <div className="relative z-10 -mb-32 md:mb-0">
+          <div className="relative z-10 -mb-32 md:-mb-36">
             <div className="relative w-full aspect-video">
               <iframe
                 className="absolute inset-0 w-full h-full rounded-lg shadow-lg"
