@@ -26,7 +26,7 @@ const OurJourney: FC = () => {
   return (
     <section
       ref={ref}
-      className="bg-black text-white py-16 px-4 md:px-10 lg:px-20"
+      className="bg-black text-white py-32 px-4 md:px-10 lg:px-20"
       aria-label="Our Journey Statistics"
     >
       <div className="max-w-6xl mx-auto text-center">
@@ -36,7 +36,7 @@ const OurJourney: FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-extrabold mb-12"
+          className="text-4xl md:text-5xl leading-relaxed font-['Bona_Nova'] italic mb-12"
         >
           Our Journey
         </motion.h2>
@@ -47,7 +47,7 @@ const OurJourney: FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-y-10 sm:gap-y-12 sm:gap-x-0"
         >
           {stats.map((stat, idx) => (
             <div
@@ -55,12 +55,12 @@ const OurJourney: FC = () => {
               className="flex flex-col items-center relative px-6 sm:px-8"
               aria-label={`${stat.label}: ${stat.end}${stat.suffix ?? ""}`}
             >
-              {/* Divider (not first) */}
-              {idx > 0 && (
+              {/* Divider: show between items in a row (but not before first of each row) */}
+              {idx % 3 !== 0 && (
                 <div className="hidden sm:block absolute left-0 top-1/2 transform -translate-y-1/2 h-12 border-l border-white/30" />
               )}
 
-              <div className="text-4xl md:text-5xl font-bold">
+              <div className="text-4xl md:text-5xl font-bold text-[#FF6F00]">
                 {inView && (
                   <CountUp
                     end={stat.end}

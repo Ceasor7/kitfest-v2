@@ -4,10 +4,14 @@ import AboutUs from "./AboutUs";
 import DividerImage from "./DividerImage";
 import OurJourney from "./OurJourney";
 import FAQSection from "./FAQSection";
+import LandingPage from "./LandingPage";
 
 const IndexHome = () => {
   return (
     <div>
+      <div>
+        <LandingPage />
+      </div>
       <section>
         <AboutUs />
       </section>

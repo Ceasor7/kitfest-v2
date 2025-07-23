@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Bona_Nova } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Header/Navbar";
 import { siteConfig } from "@/config/site";
@@ -9,6 +9,13 @@ const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-poppins",
+});
+
+const bonaNova = Bona_Nova({
+  weight: ["400", "700", "400"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-bona-nova",
 });
 
 export const metadata: Metadata = {
@@ -32,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} font-sans antialiased`}>
+      <body className={`${poppins.variable} ${bonaNova.variable}`}>
         <Navbar />
         {children}
         <Footer />
