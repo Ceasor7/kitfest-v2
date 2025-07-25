@@ -53,7 +53,7 @@ const FAQSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-4xl mb-12 leading-relaxed font-['Bona_Nova'] italic text-center text-[#860000]"
+        className="text-3xl md:text-4xl mb-12 leading-relaxed font-['Bona_Nova'] text-center text-[#860000]"
       >
         Frequently <br />
         <span>Asked Questions</span>
@@ -68,11 +68,11 @@ const FAQSection = () => {
               {/* Question */}
               <button
                 onClick={() => toggle(index)}
-                className="flex items-center justify-between w-full bg-gray-200 rounded-3xl p-4 text-left focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="flex items-center justify-between w-full bg-gray-200 rounded-3xl p-4 text-left"
                 aria-expanded={isOpen}
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-2xl bg-red-500 text-white flex items-center justify-center font-bold text-sm">
+                  <div className="w-8 h-8 rounded-2xl bg-[#B40000] text-white flex items-center justify-center font-bold text-sm">
                     {index + 1}
                   </div>
                   <span className="text-base md:text-lg font-medium">
@@ -96,7 +96,7 @@ const FAQSection = () => {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="bg-gray-100 px-4 py-3 rounded-b-lg text-sm md:text-base text-gray-700">
+                    <div className="bg-transparent px-4 py-3 rounded-b-lg text-sm md:text-base ">
                       {item.answer}
                     </div>
                   </motion.div>

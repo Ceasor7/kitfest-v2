@@ -57,10 +57,10 @@ const ParticipateOverviewCard: FC<ParticipateOverviewCardProps> = ({
       </div>
 
       {/* Title */}
-      <h3 className="text-lg font-semibold text-center mt-4">{title}</h3>
+      <h3 className="text-lg font-semibold text-center mt-7">{title}</h3>
 
       {/* Description */}
-      <p className="text-sm text-center mt-2 mb-6">{description}</p>
+      <p className="text-sm text-center mt-2 mb-10">{description}</p>
 
       {/* Arrow */}
       <div className="w-10 h-10 p-2 rounded-2xl bg-[#080F1A] absolute bottom-2 right-4 flex items-center justify-center">

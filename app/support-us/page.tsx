@@ -33,10 +33,10 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const subjects = [
-  { id: "general", label: "General Inquiry" },
-  { id: "participation", label: "Participation" },
-  { id: "volunteer", label: "Volunteer" },
-  { id: "partnership", label: "Partnership" },
+  { id: "cash", label: "Cash" },
+  { id: "space", label: "Space" },
+  { id: "equipments", label: "Equipments" },
+  { id: "assets", label: "Assets" },
 ];
 
 const socialLinks = [
@@ -45,7 +45,7 @@ const socialLinks = [
   { icon: FaLinkedin, href: "#", label: "LinkedIn" },
 ];
 
-export default function Contact() {
+export default function Support() {
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -81,8 +81,8 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl mb-12 leading-relaxed font-['Bona_Nova'] text-center text-[#860000]"
           >
-            Ask Anything <br />
-            <span>We are here to assist</span>
+            Let us know your <br />
+            <span>preferred option below</span>
           </motion.h2>
         </div>
 
@@ -222,7 +222,7 @@ export default function Contact() {
                           <FormLabel>Message</FormLabel>
                           <FormControl>
                             <Textarea
-                              placeholder="Tell us how we can help you..."
+                              placeholder="Write your message.."
                               className="
                                 min-h-[120px] resize-y
                                 border-0 border-b border-gray-300 rounded-none shadow-none

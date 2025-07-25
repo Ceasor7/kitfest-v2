@@ -9,7 +9,7 @@ import LandingPage from "./LandingPage";
 const IndexHome = () => {
   return (
     <div>
-      <div className=" pt-28">
+      <div>
         <LandingPage />
       </div>
       <section>

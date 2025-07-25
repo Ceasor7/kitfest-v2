@@ -5,8 +5,8 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="m-0 p-0">
-      <div className="m-0 p-0">
+    <div>
+      <div>
         <ParticipateHero />
       </div>
       <div>

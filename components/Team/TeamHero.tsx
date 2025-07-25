@@ -86,7 +86,7 @@ const TeamHero: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl leading-relaxed font-['Bona_Nova'] italic text-center mb-12 text-[#860000]">
+          <h2 className="text-3xl md:text-4xl leading-relaxed font-['Bona_Nova'] text-center mb-7 text-[#860000]">
             Meet Our Team
           </h2>
         </motion.div>

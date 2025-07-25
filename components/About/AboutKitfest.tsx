@@ -14,15 +14,15 @@ const AboutKitfest = () => {
   return (
     <section className="relative">
       <div className="bg-[#FFD0A0]/40 pb-44">
-        <div className="max-w-6xl mx-auto px-4 py-9 md:py-32">
-          <div className="flex flex-col md:flex-row gap-7 pt-10 justify-center items-center">
+        <div className="max-w-6xl mx-auto px-4 pt-28 md:pt-28 md:pb-36">
+          <div className="flex flex-col md:flex-row gap-7 pt-5 justify-center items-center">
             <div>
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-3xl md:text-4xl mb-12 leading-relaxed font-['Bona_Nova'] italic text-[#860000]"
+                className="text-5xl md:text-6xl mb-3 leading-relaxed font-['Bona_Nova'] italic text-[#860000]"
               >
                 About Kitfest
               </motion.h2>
@@ -63,7 +63,7 @@ const AboutKitfest = () => {
               <div className="relative w-full bg-white rounded-lg shadow-2xl overflow-hidden">
                 <div className="aspect-video">
                   <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    src="https://www.youtube.com/embed/gmMh8lxME5g?si=_85OTm8zlM40UE14"
                     title="About Kitfest Video"
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

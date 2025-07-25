@@ -52,7 +52,7 @@ const titleVariants = {
 const CareersHero = () => {
   return (
     <div className="bg-[#FFD0A0]/30">
-      <div className=" max-w-6xl mx-auto px-4 md:px-16 py-9 md:py-32">
+      <div className=" max-w-6xl mx-auto px-4 md:px-16 py-32">
         <div className="flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-7 lg:gap-20 w-full">
           <div>
             <motion.h2

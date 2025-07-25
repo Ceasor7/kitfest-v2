@@ -7,7 +7,7 @@ const KitfestOrg = () => {
   return (
     <div className="w-full">
       {/* Section 1: Host Organizations */}
-      <section className="bg-[#FFD0A0]/40 py-16 px-4 md:px-8 lg:px-16">
+      <section className="bg-[#FFD0A0]/40 py-28 px-4 md:px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

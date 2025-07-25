@@ -3,8 +3,8 @@ import React from "react";
 import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import CountdownTimer from "./CountdownTimer";
-import Image from "next/image"; // ✅ Import Next.js Image
-import heroImage from "../../public/images/kitfest-poster-2025.png"; // ✅ Make sure the path is correct
+import Image from "next/image";
+import heroImage from "../../public/images/kitfest-poster-2025.png";
 
 const LandingPage = () => {
   const containerVariants: Variants = {
@@ -55,7 +55,7 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center bg-[#FCF9EF] justify-center px-4 pt-32 md:p-8">
+    <div className=" flex items-center bg-[#FCF9EF] justify-center px-4 pt-32 pb-20">
       <motion.div
         className="w-full max-w-6xl mx-auto"
         variants={containerVariants}
@@ -69,7 +69,7 @@ const LandingPage = () => {
             variants={leftVariants}
           >
             <motion.div variants={childVariants} className="space-y-3">
-              <h1 className="text-4xl lg:text-5xl font-bold leading-relaxed font-['Bona_Nova'] italic">
+              <h1 className="text-4xl lg:text-5xl leading-relaxed font-['Bona_Nova']">
                 <span className=" text-[#860000]">Kenya International</span>
                 <br />
                 <span className=" text-[#860000]">Theatre Festival 2025</span>
@@ -105,7 +105,7 @@ const LandingPage = () => {
 
           {/* Right Side - Image */}
           <motion.div
-            className="relative order-1 lg:order-2"
+            className="relative order-1 lg:order-2 overflow-hidden"
             variants={rightVariants}
           >
             <div className="relative group">
@@ -122,7 +122,6 @@ const LandingPage = () => {
                 }}
               />
 
-              {/* ✅ Use Next.js Image */}
               <motion.div
                 className="relative w-full h-auto rounded-2xl shadow-elegant group-hover:shadow-glow transition-all duration-500 overflow-hidden"
                 whileHover={{ scale: 1.02 }}

@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import FeatureCard, { Feature } from "./FeatureCard";
@@ -36,7 +37,7 @@ const features: Feature[] = [
   {
     title: "Community Theatre",
     description:
-      "Kenyan theatre is characterised by a great presence in a few towns and cities, with Nairobi leading the lot by a huge margin. While the history of theatre suggests that it was one of the major community-based activities, urbanisation and formalisation of the craft have made it dwindle in rural areas. KITFest, through the County Tours and Community Theatre projects, seeks to reintroduce theatre back to the villages as a powerful advocacy tool, teaching platform, source of livelihood and a quality socio-cultural community element.",
+      "Kenyan theatre is characterised by a great presence in a few towns and cities, with Nairobi leading the lot by a huge margin. KITFest, through the County Tours and Community Theatre projects, seeks to reintroduce theatre back to the villages as a powerful advocacy tool, teaching platform, source of livelihood and a quality socio-cultural community element.",
     icon: <FaUsers className="w-full h-full" />,
     iconBg: "bg-[#b40000]",
   },
@@ -44,8 +45,34 @@ const features: Feature[] = [
 
 const FeaturesCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [slides, setSlides] = useState<Feature[][]>([]);
 
-  const slides = [features.slice(0, 3), features.slice(3, 6)];
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile(); // Run on load
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      // One feature per slide
+      setSlides(features.map((f) => [f]));
+    } else {
+      // Group features in threes
+      const grouped: Feature[][] = [];
+      for (let i = 0; i < features.length; i += 3) {
+        grouped.push(features.slice(i, i + 3));
+      }
+      setSlides(grouped);
+    }
+
+    setCurrentSlide(0); // Reset when layout changes
+  }, [isMobile]);
 
   const totalSlides = slides.length;
 
@@ -58,23 +85,30 @@ const FeaturesCarousel = () => {
   };
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-12">
+    <div className="w-full max-w-6xl mx-auto px-4 py-7">
       <div className="relative overflow-hidden">
         <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.5 }}
-            className="flex gap-6"
-          >
-            {slides[currentSlide].map((feature, index) => (
-              <div key={index} className="flex-shrink-0 w-full md:w-1/3">
-                <FeatureCard feature={feature} index={index} />
-              </div>
-            ))}
-          </motion.div>
+          {slides[currentSlide] && (
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5 }}
+              className="flex gap-6"
+            >
+              {slides[currentSlide].map((feature, index) => (
+                <div
+                  key={index}
+                  className={`flex-shrink-0 w-full ${
+                    isMobile ? "sm:w-full" : "md:w-1/3"
+                  }`}
+                >
+                  <FeatureCard feature={feature} index={index} />
+                </div>
+              ))}
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
 

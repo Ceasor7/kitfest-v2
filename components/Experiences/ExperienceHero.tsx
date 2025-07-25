@@ -5,15 +5,15 @@ import { motion, AnimatePresence } from "framer-motion";
 const ExperienceHero = () => {
   return (
     <div className="bg-[#FFD0A0]/30">
-      <div className=" max-w-6xl mx-auto px-4 md:px-16 py-9 md:py-32">
-        <div className=" flex flex-col md:flex-row gap-7">
+      <div className=" max-w-6xl mx-auto px-4 md:px-16 py-32">
+        <div className=" flex flex-col md:flex-row gap-7 mt-7">
           <div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl leading-relaxed font-['Bona_Nova'] italic text-center mb-12 text-[#860000]"
+              className="text-3xl md:text-4xl leading-relaxed font-['Bona_Nova'] italic mb-12 text-[#860000]"
             >
               Get Involved with KITFest
             </motion.h2>

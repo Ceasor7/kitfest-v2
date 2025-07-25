@@ -17,6 +17,7 @@ import {
   PersonStanding,
 } from "lucide-react";
 import Logo from "./Logo";
+import { MobileNav } from "./mobile-nav";
 
 interface DropdownItem {
   label: string;
@@ -149,13 +150,13 @@ const FloatingNavbar: React.FC = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="fixed top-0 left-0 right-0 z-50 mt-6 mx-auto max-w-7xl px-4"
     >
-      <div className="rounded-3xl shadow-lg bg-[#0E121B] px-24 py-3">
+      <div className="rounded-3xl shadow-lg bg-[#0E121B] px-12 md:px-24 py-3">
         <div className="flex items-center justify-between">
           {/* ✅ Logo */}
           <Logo />
 
           {/* Navigation */}
-          <div className="flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -248,6 +249,10 @@ const FloatingNavbar: React.FC = () => {
                 )}
               </div>
             ))}
+          </div>
+
+          <div className="md:hidden ml-2 text-white">
+            <MobileNav />
           </div>
         </div>
       </div>
