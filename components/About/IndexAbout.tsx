@@ -171,10 +171,12 @@ const AboutKitfest = () => {
                 {features.map((feature, index) => (
                   <FeatureCard
                     key={index}
-                    icon={feature.icon}
-                    iconColor={feature.iconColor}
-                    title={feature.title}
-                    description={feature.description}
+                    feature={{
+                      icon: <feature.icon className="w-5 h-5" />,
+                      iconBg: feature.iconColor,
+                      title: feature.title,
+                      description: feature.description,
+                    }}
                     index={index}
                   />
                 ))}

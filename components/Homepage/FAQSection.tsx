@@ -45,7 +45,7 @@ const FAQSection = () => {
 
   return (
     <section
-      className="py-16 px-4 md:px-10 lg:px-20 bg-[#FFD0A0]/30"
+      className="py-16 px-4 md:px-10 lg:px-20 bg-[#FFD0A0]/40"
       aria-label="Frequently Asked Questions"
     >
       <motion.h2
